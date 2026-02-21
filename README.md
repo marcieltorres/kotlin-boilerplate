@@ -23,6 +23,10 @@ Variable | Description | Available Values | Default Value | Required
 --- | --- | --- | --- | ---
 APP_PORT | Application port | any port | `8080` | No
 SPRING_PROFILES_ACTIVE | Active Spring profile | `dev / test / prod` | `dev` | Yes
+POSTGRES_USER | PostgreSQL username | any string | `boilerplate` | Yes
+POSTGRES_PASSWORD | PostgreSQL password | any string | — | Yes
+POSTGRES_DB | PostgreSQL database name | any string | `boilerplate_db` | Yes
+POSTGRES_PORT | PostgreSQL port | any port | `5432` | No
 
 *Note: copy `.env.template` to `.env` and fill in the values before running.*
 
@@ -34,8 +38,11 @@ build | `make build` | compile the project
 test | `make test` | run all tests
 run | `make run` | run the application (dev profile)
 clean | `make clean` | clean build artifacts
+db-up | `make db-up` | start PostgreSQL in background (Docker)
+db-down | `make db-down` | stop all Docker services
+db-logs | `make db-logs` | follow PostgreSQL container logs
 
-> Docker commands (`make up`, `make docker-build`, etc.) are available after PR-02 and PR-07.
+> Full stack Docker commands (`make up`, `make docker-build`, etc.) are available after PR-07.
 
 *Please check all available commands in the [Makefile](Makefile) for more information.*
 

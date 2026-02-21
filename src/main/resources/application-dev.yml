@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/boilerplate_db
-    username: boilerplate
-    password: boilerplate
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT:5432}/${POSTGRES_DB:boilerplate_db}
+    username: ${POSTGRES_USER:boilerplate}
+    password: ${POSTGRES_PASSWORD:secret}
   jpa:
     hibernate:
       ddl-auto: none
