@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/boilerplate_db
+    username: boilerplate
+    password: boilerplate
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework: INFO
+    com.seudominio: DEBUG
