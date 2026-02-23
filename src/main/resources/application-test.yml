@@ -1,7 +1,9 @@
 spring:
+  flyway:
+    enabled: false
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
 
 logging:
   level:

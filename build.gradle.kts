@@ -30,6 +30,7 @@ dependencies {
     runtimeOnly(libs.flyway.database.postgresql)
 
     testImplementation(libs.spring.boot.starter.test)
+    testImplementation(kotlin("test"))
     testImplementation(libs.mockk)
     testImplementation(libs.testcontainers.postgresql)
     testImplementation(libs.spring.boot.testcontainers)
