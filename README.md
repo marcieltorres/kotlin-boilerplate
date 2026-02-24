@@ -34,9 +34,10 @@ POSTGRES_PORT | PostgreSQL port | any port | `5432` | No
 
 Command | Locally | Description
 ---- | ------- | -------
-build | `make build` | compile the project
+build | `make build` | compile the project (includes static analysis)
 test | `make test` | run all tests
 run | `make run` | run the application (dev profile)
+lint | `make lint` | run detekt static analysis only (already included in build)
 clean | `make clean` | clean build artifacts
 db-up | `make db-up` | start PostgreSQL in background (Docker)
 db-down | `make db-down` | stop all Docker services

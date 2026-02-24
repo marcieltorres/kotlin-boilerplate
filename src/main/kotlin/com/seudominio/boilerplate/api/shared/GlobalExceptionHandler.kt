@@ -59,6 +59,7 @@ class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception::class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @Suppress("UnusedParameter")
     fun handleGeneric(ex: Exception, request: HttpServletRequest): ApiErrorResponse =
         ApiErrorResponse(
             status = HttpStatus.INTERNAL_SERVER_ERROR.value(),

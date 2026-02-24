@@ -1,4 +1,4 @@
-.PHONY: build test run clean help db-up db-down db-logs
+.PHONY: build test run clean help db-up db-down db-logs lint
 
 # loading and exporting all env vars from .env file automatically
 ifneq (,$(wildcard ./.env))
@@ -17,6 +17,9 @@ run:
 
 clean:
 	./gradlew clean
+
+lint: ## Check code with detekt
+	./gradlew detekt
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*##' Makefile | awk 'BEGIN {FS = ":.*##"}; {printf "  %-12s %s\n", $$1, $$2}'

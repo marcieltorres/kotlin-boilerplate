@@ -25,8 +25,8 @@ class UserEntity(
     @Column(nullable = false, updatable = false)
     val createdAt: Instant,
 ) {
-    // Required by JPA spec (used by Hibernate reflectively)
-    protected constructor() : this(
+    // Required by JPA spec (used by Hibernate reflectively via setAccessible)
+    private constructor() : this(
         id = UUID.randomUUID(),
         email = "",
         name = "",
